@@ -10,11 +10,11 @@ import (
 
 func TestCount(t *testing.T) {
 	var s1 stringService
-	c, _ := cnt(s1, "abc")
+	c := cnt(s1, "abc")
 	require.Equal(t, 3, c)
 }
 
-func cnt(strsvc StringService, input string) (int, error) {
+func cnt(strsvc StringService, input string) int {
 	return strsvc.Count(input)
 }
 
@@ -37,7 +37,7 @@ func Example_stringService_Uppercase() {
 func Example_stringService_Count() {
 	var s1 stringService
 	sentence := "Mama hello"
-	c, _ := s1.Count("Mama hello")
+	c := s1.Count("Mama hello")
 	fmt.Println("Sentence: " + sentence + " contains " + fmt.Sprint(c) + " words")
 
 	//Output:
