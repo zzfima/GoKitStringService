@@ -25,7 +25,16 @@ func TestUpperCaseEmpty(t *testing.T) {
 	require.Error(t, errors.New("String is Empty"), e)
 }
 
-func ExampleCount() {
+func Example_stringService_Uppercase() {
+	var s1 stringService
+	output, _ := s1.Uppercase("Mama hello")
+	fmt.Println(output)
+
+	//Output:
+	//MAMA HELLO
+}
+
+func Example_stringService_Count() {
 	var s1 stringService
 	sentence := "Mama hello"
 	c, _ := s1.Count("Mama hello")
