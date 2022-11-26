@@ -1,6 +1,7 @@
 package gokitstringservice
 
 import (
+	"errors"
 	"fmt"
 	"testing"
 
@@ -15,6 +16,13 @@ func TestCount(t *testing.T) {
 
 func cnt(strsvc StringService, input string) (int, error) {
 	return strsvc.Count(input)
+}
+
+func TestUpperCaseEmpty(t *testing.T) {
+	var s1 stringService
+	output, e := s1.Uppercase("")
+	require.Equal(t, "", output)
+	require.Error(t, errors.New("String is Empty"), e)
 }
 
 func ExampleCount() {
