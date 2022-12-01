@@ -15,7 +15,7 @@ type StringService interface {
 
 type stringService struct{}
 
-func (stringService) Uppercase(input string) (output string, e error) {
+func (stringService) Uppercase(input string) (output string, err error) {
 	if len(input) == 0 {
 		return "", errorEmpty
 	}

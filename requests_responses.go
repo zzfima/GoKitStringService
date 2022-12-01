@@ -6,7 +6,7 @@ type uppercaseRequest struct {
 
 type uppercaseResponse struct {
 	Output string `json:"output"`
-	E      error  `json:"e"`
+	Err    error  `json:"err,omitempty"` // errors don't JSON-marshal, so we use a string
 }
 
 type countRequest struct {
